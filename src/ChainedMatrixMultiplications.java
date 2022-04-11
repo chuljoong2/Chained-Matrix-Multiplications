@@ -24,13 +24,11 @@ public class ChainedMatrixMultiplications {
                 }
                 m[i][j] = INF;
                 for (int k = i; k <= j-1; k++){
-                    m[i][j] = Math.min(m[i][j], m[i][k] +m[k+1][j] + d[i-1]*d[k]*d[j]);
-                    System.out.println(m[i][j]); // 갱신되는 값 확인
+                    m[i][j] = Math.min(m[i][j], m[i][k] + m[k+1][j] + d[i-1]*d[k]*d[j]);
                 }
-
+                System.out.println(m[i][j]);
             }
         }
-
         System.out.println(m[1][n-1]); // answer
     }
 }
